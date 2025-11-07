@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MasterMindSite - هوشمندانه بخر</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+
+    <!-- هدر سایت -->
+    <header class="main-header">
+        <div class="container">
+            <div class="header-top">
+                <div class="logo">
+                    <h1>MasterMindSite</h1>
+                </div>
+                <div class="search-bar">
+                    <input type="text" id="searchInput" placeholder="جستجو برای کالا، برند و دسته‌بندی...">
+                    <button type="submit"><i class="fas fa-search"></i></button>
+                </div>
+                <div class="header-actions">
+                    <a href="#" class="action-link"><i class="fas fa-user"></i> ورود / ثبت‌نام</a>
+                    <a href="#" class="action-link cart-toggle-btn">
+                        <i class="fas fa-shopping-cart"></i> سبد خرید
+                        <span class="cart-count" id="cartCount">0</span>
+                    </a>
+                </div>
+            </div>
+            <nav class="main-nav">
+                <ul>
+                    <li><a href="#">دسته‌بندی کالاها</a></li>
+                    <li><a href="#">تخفیف‌ها و پیشنهادها</a></li>
+                    <li><a href="#">فروش ویژه</a></li>
+                    <li><a href="#">سوالی دارید؟</a></li>
+                    <li><a href="#">در mastermindsite بفروشید!</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <!-- اسلایدر -->
+        <section class="hero-slider">
+            <div class="slider-content">
+                <img src="https://picsum.photos/seed/slider1/1200/400" alt="تخفیف ویژه">
+                <div class="slider-text">
+                    <h2>حرج بزرگ تابستان</h2>
+                    <p>تا ۷۰٪ تخفیف روی کالاهای منتخب</p>
+                </div>
+            </div>
+        </section>
+
+        <div class="container">
+            <!-- فیلتر و مرتب‌سازی -->
+            <section class="filters-sort-bar">
+                <div class="filters">
+                    <h3>فیلتر بر اساس:</h3>
+                    <div class="filter-options" id="categoryFilters">
+                        <!-- داینامیک توسط JS ساخته می‌شود -->
+                    </div>
+                </div>
+                <div class="sort">
+                    <label for="sortSelect">مرتب‌سازی:</label>
+                    <select id="sortSelect">
+                        <option value="default">پیش‌فرض</option>
+                        <option value="price-asc">ارزان‌ترین</option>
+                        <option value="price-desc">گران‌ترین</option>
+                        <option value="name">بر اساس نام</option>
+                    </select>
+                </div>
+            </section>
+
+            <!-- دکمه مقایسه -->
+            <button class="compare-btn" id="compareBtn" style="display: none;">
+                <i class="fas fa-balance-scale"></i> مقایسه (<span id="compareCount">0</span>)
+            </button>
+
+            <!-- محصولات -->
+            <section class="products-container">
+                <div class="products-grid" id="productsGrid">
+                    <!-- داینامیک توسط JS ساخته می‌شود -->
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <!-- فوتر سایت -->
+    <footer class="main-footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>با mastermindsite</h3>
+                    <ul>
+                        <li><a href="#">درباره ما</a></li>
+                        <li><a href="#">تماس با ما</a></li>
+                        <li><a href="#">فرصت‌های شغلی</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>خدمات مشتریان</h3>
+                    <ul>
+                        <li><a href="#">پاسخ به پرسش‌های متداول</a></li>
+                        <li><a href="#">رویه‌های بازگرداندن کالا</a></li>
+                        <li><a href="#">شرایط استفاده</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>راهنمای خرید از mastermindsite</h3>
+                    <ul>
+                        <li><a href="#">نحوه ثبت سفارش</a></li>
+                        <li><a href="#">رویه ارسال سفارش</a></li>
+                        <li><a href="#">شیوه‌های پرداخت</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>از تخفیف‌ها باخبر شو!</h3>
+                    <p>ایمیل خود را وارد کنید تا جدیدترین تخفیف‌ها را برای شما ارسال کنیم.</p>
+                    <form class="newsletter-form">
+                        <input type="email" placeholder="ایمیل شما">
+                        <button type="submit">ثبت</button>
+                    </form>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 MasterMindSite. تمامی حقوق محفوظ است.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- مودال سبد خرید -->
+    <div class="modal-sidebar" id="cartSidebar">
+        <div class="modal-sidebar-content">
+            <div class="modal-header">
+                <h2>سبد خرید شما</h2>
+                <span class="close-btn" id="closeCartBtn">&times;</span>
+            </div>
+            <div class="modal-body" id="cartItems">
+                <!-- آیتم‌های سبد خرید داینامیک اضافه می‌شوند -->
+            </div>
+            <div class="modal-footer">
+                <h3>جمع کل: <span id="cartTotal">0</span> تومان</h3>
+                <button class="checkout-btn">ثبت نهایی سفارش</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- مودال جزئیات محصول -->
+    <div class="modal" id="productModal">
+        <div class="modal-content">
+            <span class="close-btn" id="closeModalBtn">&times;</span>
+            <div class="modal-body" id="modalBody">
+                <!-- جزئیات محصول داینامیک اضافه می‌شوند -->
+            </div>
+        </div>
+    </div>
+
+    <!-- مودال مقایسه محصولات -->
+    <div class="modal" id="compareModal">
+        <div class="modal-content-compare">
+            <span class="close-btn" id="closeCompareBtn">&times;</span>
+            <div class="modal-body" id="compareBody">
+                <!-- جدول مقایسه داینامیک اضافه می‌شود -->
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
